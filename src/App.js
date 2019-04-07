@@ -29,7 +29,13 @@ class App extends Component {
       .then(response => {
         console.log(response);
         this.setState({
-          comments: response.filter(comment => comment.user.login === this.state.targetUser),
+          comments: response.filter(comment => {
+            if (this.state.targetUser.length > 0) {
+              return "login" in comment.user && comment.user.login === this.state.targetUser
+            } else {
+              return true;
+            }
+          }),
           loading: false
         })
       })
