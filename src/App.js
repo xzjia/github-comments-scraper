@@ -61,8 +61,8 @@ class App extends Component {
           <Button onClick={this.handleClick} variant="primary">Submit</Button>
         </Form>
         {this.state.comments.map((comment, index) => (
-          <Card style={{ width: '18rem' }}>
-            <Card.Body key={index} >
+          <Card key={index} style={{ width: '18rem' }}>
+            <Card.Body>
               <Card.Title>Review Comment</Card.Title>
               <Card.Subtitle>{comment.created_at}</Card.Subtitle>
               <Card.Text>{comment.body}</Card.Text>
