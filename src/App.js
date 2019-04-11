@@ -42,7 +42,7 @@ class App extends Component {
               "created_at": raw_comment.created_at,
               "body": raw_comment.body,
               "html_url": raw_comment.html_url,
-              "user": "login" in raw_comment.user && raw_comment.user.login,
+              "user": raw_comment.user && "login" in raw_comment.user && raw_comment.user.login,
             }
           }),
           loading: false
